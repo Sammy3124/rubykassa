@@ -1,9 +1,5 @@
-class RobokassaController < ActionController::Base
-  if respond_to?(:before_action)
+class RobokassaController < ApplicationController
     before_action :create_notification
-  else
-    before_filter :create_notification
-  end
 
   def result
     if @notification.valid_result_signature?
